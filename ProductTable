@@ -1,0 +1,41 @@
+-- Creating a new table
+CREATE TABLE Product (
+    ProductID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Category VARCHAR(50),
+    Price DECIMAL(10, 2),
+    StockQuantity INT
+);
+
+-- Inserting records into the Product table
+INSERT INTO Product (ProductID, Name, Category, Price, StockQuantity)
+VALUES (1, 'Laptop', 'Electronics', 999.99, 50),
+       (2, 'Smartphone', 'Electronics', 599.99, 100),
+       (3, 'Bookshelf', 'Furniture', 149.99, 25);
+
+-- Selecting data from the Product table
+SELECT * FROM Product;
+
+-- Updating a record in the Product table
+UPDATE Product
+SET Price = 1099.99
+WHERE ProductID = 1;
+
+-- Deleting a record from the Product table
+DELETE FROM Product
+WHERE ProductID = 3;
+
+-- Altering the Product table to add a new column
+ALTER TABLE Product
+ADD Description TEXT;
+
+-- Altering the Product table to modify a column
+ALTER TABLE Product
+ALTER COLUMN Price DECIMAL(12, 2);
+
+-- Dropping the Description column from the Product table
+ALTER TABLE Product
+DROP COLUMN Description;
+
+-- Dropping the Product table
+DROP TABLE Product;
